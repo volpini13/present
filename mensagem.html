@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem - Feliz Aniversário!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box; /* Inclui padding e borda nas dimensões totais */
+        }
+        body {
+            font-family: 'Lora', serif;
+            background: #e1f5fe; /* Azul claro */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Impede scroll horizontal */
+        }
+        header {
+            width: 100%;
+            background: rgba(173, 216, 230, 0.9); /* Azul claro */
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            color: #1e88e5; /* Azul mais escuro */
+            margin: 0;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            color: #1e88e5; /* Azul mais escuro */
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%; /* Garante que a largura ocupe 100% */
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 2em;
+            color: #1e88e5; /* Azul mais escuro */
+            margin: 20px 0;
+        }
+        .message {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #333;
+            text-align: center;
+        }
+        .footer {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Estilos para os confetes */
+        .confetti {
+            position: fixed;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(173, 216, 230, 0.8); /* Azul claro */
+            opacity: 0.9;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        /* Animação de queda */
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em; /* Ajusta o tamanho do título */
+            }
+            .message {
+                font-size: 1.2em; /* Ajusta o tamanho da mensagem */
+                padding: 0 10px; /* Adiciona espaçamento lateral */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em; /* Reduz o tamanho do título */
+            }
+            .message {
+                font-size: 1em; /* Ajusta o tamanho da mensagem */
+                padding: 0 5px; /* Menos espaçamento em telas muito pequenas */
+            }
+            nav a {
+                font-size: 1em; /* Ajusta o tamanho da fonte do menu */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Mensagem - Feliz Aniversário!</h1>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="mensagem.html">Mensagem</a>
+        <a href="fotos.html">Fotos</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Feliz aniversário meu amor!!!</h2>
+    <p class="message">Amor, hoje é seu dia, seu aniversário!
+        Gostaria de desejar um ótimo aniversário, mesmo sabendo que essa mensagem pode não ser o presente ideal que você esperava. Quero que saiba que foi feita de coração.
+        
+        Estou muito feliz em ter você ao meu lado e ser seu namorado. Você melhorou minha vida de maneira incrível. Adoro fazer as coisas com você, sua alegria é contagiosa! Quando estou com você, fico radiante de felicidade. E quando estou longe, sinto saudades.
+        
+        Sei que às vezes você fica brava comigo, mas sei que no fundo você se importa comigo, assim como eu me importo com você.
+        
+        Não sou muito bom com as palavras, mas quero que saiba que tudo que acontece entre nós me faz extremamente feliz. E se eu conseguir transmitir essa felicidade para você, ficarei realizado.
+        
+        Que você aproveite ao máximo seu dia e continue sendo essa pessoa maravilhosa que é. Que conquiste tudo de melhor na sua vida.
+        
+        Te amo, meu amor.</p>
+</div>
+
+<footer class="footer">
+    <p>Com todo meu amor, Arthur</p>
+</footer>
+
+<script>
+    // Função para gerar confetes
+    function createConfetti() {
+        for (let i = 0; i < 100; i++) {
+            let confetti = document.createElement("div");
+            confetti.classList.add("confetti");
+            confetti.style.left = Math.random() * 100 + "vw";
+            confetti.style.animationDuration = Math.random() * 3 + 2 + "s"; // Duração aleatória
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`; // Cor aleatória
+            document.body.appendChild(confetti);
+            
+            // Remove o confete depois que a animação termina
+            confetti.addEventListener("animationend", () => {
+                confetti.remove();
+            });
+        }
+    }
+
+    // Chama a função ao carregar a página
+    window.addEventListener("load", createConfetti);
+</script>
+
+</body>
+</html>

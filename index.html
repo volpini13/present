@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário, Meu Amor!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box; /* Inclui padding e borda nas dimensões totais */
+        }
+        body {
+            font-family: 'Lora', serif;
+            background: #e1f5fe; /* Azul claro */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Impede o scroll horizontal */
+        }
+        header {
+            width: 100%;
+            background: rgba(173, 216, 230, 0.9); /* Azul claro */
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3em;
+            color: #1e88e5; /* Azul mais escuro */
+            margin: 0;
+        }
+        .name {
+            font-size: 4em;
+            color: #1e88e5; /* Azul mais escuro */
+            margin: 20px 0 30px;
+        }
+        nav {
+            margin: 10px 0;
+        }
+        nav a {
+            color: #1e88e5; /* Azul mais escuro */
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            width: 100%; /* Garante que a largura ocupe 100% */
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            max-width: 350px; /* Limita a largura da imagem para 350px */
+            border-radius: 10px;
+        }
+        .footer {
+            font-size: 1.2em;
+            color: #666;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        /* Estilos para os confetes */
+        .confetti {
+            position: fixed;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(173, 216, 230, 0.8); /* Azul claro */
+            opacity: 0.9;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        /* Animação de queda */
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Media Queries para dispositivos menores */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em; /* Reduz tamanho do título */
+            }
+            .name {
+                font-size: 3em; /* Reduz tamanho do nome */
+            }
+            nav a {
+                font-size: 1em; /* Reduz tamanho da fonte do menu */
+            }
+            img {
+                max-width: 90%; /* Permite que a imagem ocupe mais espaço */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Feliz Aniversário, Meu Amor!</h1>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="mensagem.html">Mensagem</a>
+        <a href="fotos.html">Fotos</a>
+    </nav>
+</header>
+
+<div class="container">
+    <p class="name">Para meu Amor</p>
+    <p>Bem-vinda ao seu site de aniversário! Aqui, você encontrará mensagens especiais e fotos dos nossos melhores momentos.</p>
+    <img src="img/foto7.png" alt="Feliz Aniversário">
+</div>
+
+<footer class="footer">
+    <p>Com todo meu amor, Arthur</p>
+</footer>
+
+<script>
+    // Função para gerar confetes
+    function createConfetti() {
+        for (let i = 0; i < 100; i++) {
+            let confetti = document.createElement("div");
+            confetti.classList.add("confetti");
+            confetti.style.left = Math.random() * 100 + "vw";
+            confetti.style.animationDuration = Math.random() * 3 + 2 + "s"; // Duração aleatória
+            confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`; // Cor aleatória
+            document.body.appendChild(confetti);
+            
+            // Remove o confete depois que a animação termina
+            confetti.addEventListener("animationend", () => {
+                confetti.remove();
+            });
+        }
+    }
+
+    // Chama a função ao carregar a página
+    window.addEventListener("load", createConfetti);
+</script>
+
+</body>
+</html>
